@@ -27,13 +27,20 @@
     },
     "default": {
       "display_name": "Recommended Set",
-      "description": "Core tools and channels for a productive setup",
+      "description": "All available IronClaw WASM tools and core channels",
       "extensions": [
         "tools/github",
         "tools/gmail",
         "tools/google_calendar",
+        "tools/google_docs",
         "tools/google_drive",
+        "tools/google_sheets",
+        "tools/google_slides",
+        "tools/hermes",
+        "tools/llm_context",
         "tools/slack_tool",
+        "tools/telegram_mtproto",
+        "tools/web_search",
         "channels/telegram",
         "channels/slack"
       ],
