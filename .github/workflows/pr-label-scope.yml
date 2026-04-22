@@ -12,6 +12,17 @@ jobs:
   scope:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: Bootstrap labels (idempotent)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: bash .github/scripts/create-labels.sh
+
       - uses: actions/labeler@v5
         with:
           configuration-path: .github/labeler.yml

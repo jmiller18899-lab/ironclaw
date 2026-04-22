@@ -18,6 +18,12 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.base.ref }}
 
+      - name: Bootstrap labels (idempotent)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: bash .github/scripts/create-labels.sh
+
       - name: Classify PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
